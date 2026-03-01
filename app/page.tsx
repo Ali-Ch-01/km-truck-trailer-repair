@@ -1,6 +1,8 @@
 import Link from "next/link";
-import { Phone, ArrowRight, Wrench, Settings, Truck, Zap, Battery, Wind, Thermometer, AlertTriangle, Shield, Clock, DollarSign, Map, CheckCircle } from "lucide-react";
+import { ArrowRight, Wrench, Settings, Truck, Zap, Battery, Wind, Thermometer, AlertTriangle, Shield, Clock, DollarSign, Map, CheckCircle, Phone, Star, CreditCard, HeartHandshake } from "lucide-react";
 import type { Metadata } from "next";
+import HeroSection from "@/app/components/ui/HeroSection";
+import Reveal from "@/app/components/ui/Reveal";
 
 export const metadata: Metadata = {
   title: "Truck & Trailer Repair in South Carolina | 24/7 Emergency Service",
@@ -23,10 +25,17 @@ const services = [
 ];
 
 const stats = [
-  { icon: <Clock size={28} />, stat: "60 Min", label: "Average Response Time", desc: "Fast dispatch for emergencies" },
-  { icon: <Wrench size={28} />, stat: "ASE Certified", label: "Technicians", desc: "Experts in major truck brands" },
-  { icon: <DollarSign size={28} />, stat: "Transparent", label: "Pricing Always", desc: "No hidden fees, upfront quotes" },
-  { icon: <Map size={28} />, stat: "Wide Coverage", label: "Across SC", desc: "Mobile units serving all of SC" },
+  { icon: <Clock size={26} />, stat: "60 Min", label: "Avg Response Time", desc: "Fast dispatch anywhere in SC" },
+  { icon: <Wrench size={26} />, stat: "Certified", label: "Technicians", desc: "Experts in all major truck brands" },
+  { icon: <DollarSign size={26} />, stat: "Upfront", label: "Transparent Pricing", desc: "No hidden fees, ever" },
+  { icon: <Map size={26} />, stat: "14+ Cities", label: "Across SC", desc: "Mobile units covering all of SC" },
+];
+
+const trustPillars = [
+  { icon: <Shield size={28} />, title: "Trusted & Professional", desc: "Experienced technicians delivering reliable repairs you can count on, every single time.", color: "#2563EB", bg: "#EFF6FF" },
+  { icon: <CreditCard size={28} />, title: "Flexible Payment", desc: "Convenient payment choices designed to fit your budget and keep your fleet moving.", color: "#059669", bg: "#ECFDF5" },
+  { icon: <Star size={28} />, title: "Satisfaction Guarantee", desc: "Quality service backed by our commitment to customer satisfaction — we make it right.", color: "#D97706", bg: "#FFFBEB" },
+  { icon: <HeartHandshake size={28} />, title: "Friendly Support", desc: "A helpful team ready to assist you every step of the way, from diagnosis to delivery.", color: "#7C3AED", bg: "#F5F3FF" },
 ];
 
 const testimonials = [
@@ -44,166 +53,206 @@ const areas = [
 export default function HomePage() {
   return (
     <>
-      {/* ── Hero ── */}
-      <section style={{ position: "relative", minHeight: "580px", display: "flex", alignItems: "center", background: "linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #0F172A 100%)", overflow: "hidden" }}>
-        <div style={{ position: "absolute", right: 0, top: 0, bottom: 0, width: "55%", background: "linear-gradient(to left, rgba(37,99,235,0.06) 0%, transparent 100%)", zIndex: 0 }} />
-        <div className="container" style={{ position: "relative", zIndex: 2, padding: "100px 24px 80px" }}>
-          <div style={{ maxWidth: "620px" }}>
-            <div style={{ display: "inline-flex", alignItems: "center", gap: "6px", background: "rgba(37,99,235,0.2)", border: "1px solid rgba(37,99,235,0.35)", color: "#93C5FD", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", padding: "6px 14px", borderRadius: "9999px", marginBottom: "24px" }}>
-              <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#4ADE80", display: "inline-block" }} />
-              Available 24/7 Nationwide
-            </div>
-            <h1 style={{ color: "#fff", fontSize: "clamp(2.6rem,5vw,4rem)", fontWeight: 800, lineHeight: 1.08, marginBottom: "20px" }}>
-              Keeping Your<br /><span style={{ color: "#60A5FA" }}>Fleet Moving</span>
-            </h1>
-            <p style={{ color: "#CBD5E1", fontSize: "1.1rem", lineHeight: 1.75, marginBottom: "36px", maxWidth: "520px" }}>
-              Professional roadside assistance and comprehensive fleet maintenance. We minimize downtime so you can maximize delivery.
-            </p>
-            <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-              <a href="tel:+18033934907" className="hover-btn-primary" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#2563EB", color: "#fff", padding: "14px 28px", borderRadius: "10px", fontWeight: 700, fontSize: "1rem", textDecoration: "none", boxShadow: "0 4px 20px rgba(37,99,235,0.4)", transition: "all 0.2s" }}>
-                Request Service <ArrowRight size={18} />
-              </a>
-              <Link href="/services" style={{ display: "inline-flex", alignItems: "center", gap: "8px", color: "#E2E8F0", padding: "13px 28px", borderRadius: "10px", fontWeight: 600, fontSize: "1rem", border: "1.5px solid rgba(255,255,255,0.2)", textDecoration: "none" }}>
-                View Services
-              </Link>
-            </div>
-            <div style={{ display: "flex", gap: "24px", marginTop: "40px", flexWrap: "wrap" }}>
-              {["Since 2013", "All Brands Serviced", "Fully Mobile"].map((b) => (
-                <div key={b} style={{ display: "flex", alignItems: "center", gap: "6px", color: "#94A3B8", fontSize: "0.8rem" }}>
-                  <CheckCircle size={14} color="#4ADE80" /> {b}
-                </div>
+      {/* ── Animated Hero (client component) ── */}
+      <HeroSection />
+
+      {/* ── Stats Bar ── */}
+      <section style={{ background: "#fff", paddingTop: "40px", paddingBottom: "0" }}>
+        <div className="container">
+          <Reveal type="up">
+            <div style={{
+              display: "grid", gridTemplateColumns: "repeat(4, 1fr)",
+              gap: 0, background: "#F8F9FB", border: "1px solid #E5E9EF",
+              borderRadius: "16px", overflow: "hidden",
+            }} className="stats-bar">
+              {stats.map((s, i) => (
+                <Reveal key={i} type="scale" delay={i * 100}>
+                  <div style={{
+                    padding: "24px 20px", display: "flex", alignItems: "center", gap: "14px",
+                    borderRight: i < stats.length - 1 ? "1px solid #E5E9EF" : "none",
+                    height: "100%"
+                  }}>
+                    <div style={{
+                      width: "48px", height: "48px", flexShrink: 0, background: "#EFF6FF",
+                      borderRadius: "12px", display: "flex", alignItems: "center",
+                      justifyContent: "center", color: "#2563EB",
+                      animation: "float 6s ease-in-out infinite",
+                      animationDelay: `${i * 0.8}s`
+                    }}>{s.icon}</div>
+                    <div>
+                      <div className="stat-number" style={{ fontSize: "1.2rem", fontWeight: 800, color: "#111827", lineHeight: 1.1 }}>{s.stat}</div>
+                      <div style={{ fontSize: "0.78rem", fontWeight: 700, color: "#374151" }}>{s.label}</div>
+                      <div style={{ fontSize: "0.72rem", color: "#9CA3AF" }}>{s.desc}</div>
+                    </div>
+                  </div>
+                </Reveal>
               ))}
             </div>
-          </div>
+          </Reveal>
         </div>
       </section>
 
-      {/* ── Services Overview ── */}
+      {/* ── Services Grid ── */}
       <section className="section">
         <div className="container">
-          <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: "48px", flexWrap: "wrap", gap: "16px" }}>
-            <div>
-              <span className="eyebrow">Our Expertise</span>
-              <h2 style={{ margin: 0 }}>Comprehensive Repair Solutions</h2>
-            </div>
-            <Link href="/services" style={{ display: "inline-flex", alignItems: "center", gap: "6px", color: "#2563EB", fontWeight: 600, textDecoration: "none", fontSize: "0.9rem" }}>
-              View all services <ArrowRight size={16} />
-            </Link>
-          </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: "20px" }}>
-            {services.map((s) => (
-              <Link key={s.href} href={s.href} className="hover-card" style={{ background: "#fff", border: "1px solid #E5E9EF", borderRadius: "14px", padding: "24px", display: "block", textDecoration: "none", transition: "all 0.2s" }}>
-                <div style={{ width: "48px", height: "48px", background: "#EFF6FF", borderRadius: "10px", display: "flex", alignItems: "center", justifyContent: "center", color: "#2563EB", marginBottom: "14px" }}>{s.icon}</div>
-                <h4 style={{ marginBottom: "8px", fontSize: "1rem" }}>{s.title}</h4>
-                <p style={{ fontSize: "0.875rem", marginBottom: "14px", margin: "0 0 14px" }}>{s.desc}</p>
-                <span style={{ fontSize: "0.8rem", color: "#2563EB", fontWeight: 600 }}>Learn more →</span>
+          <Reveal type="up">
+            <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: "40px", flexWrap: "wrap", gap: "16px" }}>
+              <div>
+                <span className="eyebrow">Our Expertise</span>
+                <h2 style={{ margin: 0 }}>Comprehensive Repair Solutions</h2>
+              </div>
+              <Link href="/services" style={{ display: "inline-flex", alignItems: "center", gap: "6px", color: "#2563EB", fontWeight: 600, textDecoration: "none", fontSize: "0.9rem" }}>
+                View all services <ArrowRight size={16} />
               </Link>
+            </div>
+          </Reveal>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: "18px" }}>
+            {services.map((s, i) => (
+              <Reveal key={s.href} type="up" delay={i * 60}>
+                <Link href={s.href} className="tilt-card" style={{
+                  background: "#fff", border: "1px solid #E5E9EF", borderRadius: "14px",
+                  padding: "22px", display: "block", textDecoration: "none",
+                  transition: "all 0.25s ease",
+                }}>
+                  <div style={{
+                    width: "46px", height: "46px", background: "#EFF6FF", borderRadius: "10px",
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                    color: "#2563EB", marginBottom: "12px",
+                    transition: "transform 0.3s ease",
+                  }}>{s.icon}</div>
+                  <h4 style={{ marginBottom: "6px", fontSize: "0.95rem" }}>{s.title}</h4>
+                  <p style={{ fontSize: "0.84rem", margin: "0 0 12px", lineHeight: 1.6 }}>{s.desc}</p>
+                  <span style={{ fontSize: "0.78rem", color: "#2563EB", fontWeight: 600 }}>Learn more →</span>
+                </Link>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── Why Choose KM ── */}
-      <section className="section section--gray">
+      {/* ── What Makes K&M Different ── */}
+      <section className="section" style={{ background: "#F8F9FB", borderTop: "1px solid #E5E9EF", borderBottom: "1px solid #E5E9EF" }}>
         <div className="container">
-          <div className="section-header section-header--center">
-            <span className="eyebrow">Why Us</span>
-            <h2>Why Industry Leaders Choose KM</h2>
-            <p>We combine technical expertise with a commitment to speed, ensuring your business never stops moving.</p>
-          </div>
-          <div className="grid-4">
-            {stats.map((s, i) => (
-              <div key={i} style={{ background: "#fff", border: "1px solid #E5E9EF", borderRadius: "16px", padding: "32px 24px", textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", gap: "10px" }}>
-                <div style={{ width: "60px", height: "60px", background: "#EFF6FF", borderRadius: "14px", display: "flex", alignItems: "center", justifyContent: "center", color: "#2563EB", marginBottom: "4px" }}>{s.icon}</div>
-                <div style={{ fontSize: "1.4rem", fontWeight: 800, color: "#111827" }}>{s.stat}</div>
-                <div style={{ fontSize: "0.875rem", fontWeight: 700, color: "#374151" }}>{s.label}</div>
-                <div style={{ fontSize: "0.8rem", color: "#9CA3AF" }}>{s.desc}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Trust Pillars ── */}
-      <section className="section">
-        <div className="container">
-          <div className="section-header section-header--center">
-            <span className="eyebrow">Our Promise</span>
-            <h2>What Makes K&amp;M Different</h2>
-          </div>
-          <div className="grid-4">
-            {[
-              { icon: "🏅", title: "Trusted & Professional", desc: "Experienced technicians delivering reliable repairs you can count on, every single time." },
-              { icon: "💳", title: "Flexible Payment", desc: "Convenient payment choices designed to fit your budget and keep your fleet moving." },
-              { icon: "✅", title: "Satisfaction Guarantee", desc: "Quality service backed by our commitment to customer satisfaction — we make it right." },
-              { icon: "🤝", title: "Friendly Support", desc: "A helpful team ready to assist you every step of the way, from diagnosis to delivery." },
-            ].map((p, i) => (
-              <div key={i} className="card" style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: "12px", padding: "32px 24px" }}>
-                <div style={{ fontSize: "2.5rem" }}>{p.icon}</div>
-                <h4>{p.title}</h4>
-                <p style={{ fontSize: "0.875rem", margin: 0 }}>{p.desc}</p>
-              </div>
+          <Reveal type="up">
+            <div className="section-header section-header--center">
+              <span className="eyebrow">Our Promise</span>
+              <h2>What Makes K&amp;M Different</h2>
+              <p style={{ maxWidth: "520px" }}>We don&apos;t just fix trucks — we build trust on every repair, every mile, every time.</p>
+            </div>
+          </Reveal>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "20px" }}>
+            {trustPillars.map((p, i) => (
+              <Reveal key={i} type="scale" delay={i * 100}>
+                <div className="tilt-card" style={{
+                  background: "#fff", border: "1px solid #E5E9EF", borderRadius: "16px",
+                  padding: "32px 24px", display: "flex", flexDirection: "column",
+                  alignItems: "flex-start", gap: "14px", height: "100%",
+                  transition: "all 0.3s ease",
+                }}>
+                  <div style={{
+                    width: "56px", height: "56px", borderRadius: "14px",
+                    background: p.bg, display: "flex", alignItems: "center",
+                    justifyContent: "center", color: p.color, flexShrink: 0,
+                    animation: `float 6s ${i * 1.2}s ease-in-out infinite`,
+                  }}>{p.icon}</div>
+                  <div>
+                    <h4 style={{ fontSize: "1rem", marginBottom: "8px", color: "#111827" }}>{p.title}</h4>
+                    <p style={{ fontSize: "0.875rem", margin: 0, lineHeight: 1.65, color: "#6B7280" }}>{p.desc}</p>
+                  </div>
+                  <div style={{ width: "36px", height: "3px", background: p.color, borderRadius: "2px", marginTop: "auto" }} />
+                </div>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
       {/* ── Testimonials ── */}
-      <section className="section section--gray">
+      <section className="section">
         <div className="container">
-          <div className="section-header section-header--center">
-            <span className="eyebrow">Reviews</span>
-            <h2>What They Say</h2>
-            <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#fff", border: "1px solid #E5E9EF", borderRadius: "9999px", padding: "6px 16px", marginTop: "8px" }}>
-              <span style={{ color: "#F59E0B", fontSize: "0.9rem" }}>{'★'.repeat(5)}</span>
-              <span style={{ fontSize: "0.8rem", fontWeight: 700, color: "#111827" }}>EXCELLENT</span>
-              <span style={{ fontSize: "0.8rem", color: "#6B7280" }}>Based on 69 reviews</span>
+          <Reveal type="up">
+            <div className="section-header section-header--center">
+              <span className="eyebrow">Reviews</span>
+              <h2>What Drivers Say</h2>
+              <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#F8F9FB", border: "1px solid #E5E9EF", borderRadius: "9999px", padding: "6px 16px", marginTop: "8px" }}>
+                <span style={{ color: "#F59E0B", fontSize: "0.9rem" }}>{'★'.repeat(5)}</span>
+                <span style={{ fontSize: "0.8rem", fontWeight: 700, color: "#111827" }}>EXCELLENT</span>
+                <span style={{ fontSize: "0.8rem", color: "#6B7280" }}>Based on 69 Google reviews</span>
+              </div>
             </div>
-          </div>
+          </Reveal>
           <div className="grid-3">
             {testimonials.map((t, i) => (
-              <div key={i} className="testimonial-card">
-                <div className="star-row">{'★'.repeat(t.stars)}</div>
-                <p className="testimonial-text">&quot;{t.text}&quot;</p>
-                <div>
-                  <div className="testimonial-author">{t.name}</div>
-                  <div className="testimonial-badge">✓ Verified Google Review</div>
+              <Reveal key={i} type="up" delay={i * 150}>
+                <div className="testimonial-card tilt-card" style={{ height: "100%" }}>
+                  <div className="star-row">{'★'.repeat(t.stars)}</div>
+                  <p className="testimonial-text">&quot;{t.text}&quot;</p>
+                  <div>
+                    <div className="testimonial-author">{t.name}</div>
+                    <div className="testimonial-badge">✓ Verified Google Review</div>
+                  </div>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
       {/* ── Service Areas ── */}
-      <section style={{ background: "#0F172A", padding: "80px 0" }}>
-        <div className="container">
+      <section style={{ background: "#0F172A", padding: "80px 0", position: "relative", overflow: "hidden" }}>
+        {/* Animated background orb */}
+        <div style={{
+          position: "absolute", top: "20%", right: "-100px", width: "400px", height: "400px",
+          borderRadius: "50%", background: "rgba(37,99,235,0.08)", filter: "blur(80px)",
+          animation: "floatSlow 12s ease-in-out infinite", pointerEvents: "none"
+        }} />
+        <div className="container" style={{ position: "relative", zIndex: 1 }}>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "60px", alignItems: "center" }} className="grid-two-col">
-            <div>
-              <span style={{ display: "inline-block", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#60A5FA", marginBottom: "12px" }}>Service Coverage</span>
-              <h2 style={{ color: "#fff", marginBottom: "16px" }}>Service Areas & Locations</h2>
-              <p style={{ color: "#94A3B8", lineHeight: 1.75, marginBottom: "28px" }}>
-                We are strategically located to serve the major logistic routes. Check our coverage map to see if you are in our primary service zone.
-              </p>
-              <div style={{ display: "flex", gap: "8px", alignItems: "center", color: "#CBD5E1", fontSize: "0.875rem", marginBottom: "16px" }}>
-                <div style={{ width: 36, height: 36, background: "rgba(37,99,235,0.2)", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>📍</div>
-                <div><div style={{ fontWeight: 600, color: "#fff" }}>Main Headquarters</div><div style={{ fontSize: "0.8rem", color: "#94A3B8" }}>1278 State Rd S-20-233, Ridgeway, SC 29130</div></div>
+            <Reveal type="left">
+              <div>
+                <span style={{ display: "inline-block", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#60A5FA", marginBottom: "12px" }}>Service Coverage</span>
+                <h2 style={{ color: "#fff", marginBottom: "16px" }}>Service Areas &amp; Locations</h2>
+                <p style={{ color: "#94A3B8", lineHeight: 1.75, marginBottom: "28px" }}>
+                  Strategically located to serve the major logistic routes of South Carolina.
+                </p>
+                <div style={{ display: "flex", gap: "8px", alignItems: "center", marginBottom: "16px" }}>
+                  <div style={{ width: 36, height: 36, background: "rgba(37,99,235,0.2)", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, color: "#60A5FA" }}>
+                    <Map size={16} />
+                  </div>
+                  <div>
+                    <div style={{ fontWeight: 600, color: "#fff", fontSize: "0.9rem" }}>Main Headquarters</div>
+                    <div style={{ fontSize: "0.8rem", color: "#94A3B8" }}>1278 State Rd S-20-233, Ridgeway, SC 29130</div>
+                  </div>
+                </div>
+                <div style={{ display: "flex", gap: "8px", alignItems: "center", marginBottom: "32px" }}>
+                  <div style={{ width: 36, height: 36, background: "rgba(37,99,235,0.2)", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, color: "#60A5FA" }}>
+                    <Phone size={16} />
+                  </div>
+                  <div>
+                    <div style={{ fontWeight: 600, color: "#fff", fontSize: "0.9rem" }}>24/7 Dispatch</div>
+                    <div style={{ fontSize: "0.8rem", color: "#94A3B8" }}>(803) 393-4907</div>
+                  </div>
+                </div>
+                <Link href="/service-areas" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#2563EB", color: "#fff", padding: "13px 24px", borderRadius: "10px", fontWeight: 700, textDecoration: "none" }}>
+                  Find Nearest Tech <ArrowRight size={16} />
+                </Link>
               </div>
-              <div style={{ display: "flex", gap: "8px", alignItems: "center", color: "#CBD5E1", fontSize: "0.875rem", marginBottom: "32px" }}>
-                <div style={{ width: 36, height: 36, background: "rgba(37,99,235,0.2)", borderRadius: "8px", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>📞</div>
-                <div><div style={{ fontWeight: 600, color: "#fff" }}>24/7 Dispatch</div><div style={{ fontSize: "0.8rem", color: "#94A3B8" }}>(803) 393-4907</div></div>
-              </div>
-              <Link href="/service-areas" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#2563EB", color: "#fff", padding: "13px 24px", borderRadius: "10px", fontWeight: 700, textDecoration: "none" }}>
-                Find Nearest Tech <ArrowRight size={16} />
-              </Link>
-            </div>
-            <div>
-              <div style={{ background: "rgba(37,99,235,0.08)", border: "1px solid rgba(37,99,235,0.2)", borderRadius: "16px", padding: "24px" }}>
-                <p style={{ fontSize: "0.75rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "#60A5FA", marginBottom: "16px" }}>Areas We Serve</p>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px" }}>
-                  {areas.map((a) => (
-                    <div key={a} style={{ display: "flex", alignItems: "center", gap: "6px", color: "#CBD5E1", fontSize: "0.85rem" }}>
-                      <span style={{ color: "#60A5FA", fontSize: "0.6rem" }}>●</span> {a}
+            </Reveal>
+            <Reveal type="right">
+              <div style={{
+                background: "rgba(37,99,235,0.08)", border: "1px solid rgba(37,99,235,0.2)",
+                borderRadius: "16px", padding: "24px",
+                animation: "borderPulse 4s ease-in-out infinite"
+              }}>
+                <p style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "#60A5FA", marginBottom: "16px" }}>Areas We Serve</p>
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px" }}>
+                  {areas.map((a, i) => (
+                    <div key={a} style={{
+                      display: "flex", alignItems: "center", gap: "6px",
+                      color: "#CBD5E1", fontSize: "0.85rem",
+                      animation: `fadeUp 0.5s ${i * 0.05}s both ease`
+                    }}>
+                      <span style={{ color: "#60A5FA", fontSize: "0.5rem" }}>●</span> {a}
                     </div>
                   ))}
                 </div>
@@ -211,7 +260,7 @@ export default function HomePage() {
                   View all 14 service areas →
                 </Link>
               </div>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -219,16 +268,22 @@ export default function HomePage() {
       {/* ── CTA Banner ── */}
       <section style={{ background: "#fff", padding: "80px 0", borderTop: "1px solid #F1F4F8" }}>
         <div className="container" style={{ textAlign: "center" }}>
-          <span className="eyebrow">Get Started</span>
-          <h2 style={{ marginBottom: "12px" }}>Ready to Optimize Your Fleet?</h2>
-          <p style={{ marginBottom: "32px", maxWidth: "500px", margin: "0 auto 32px" }}>Get a free consultation for your fleet maintenance needs. Most roadside calls responded to within 60 minutes.</p>
-          <div style={{ display: "flex", gap: "12px", justifyContent: "center", alignItems: "center", flexWrap: "wrap" }}>
-            <input type="email" placeholder="Enter your email" style={{ padding: "12px 18px", border: "1.5px solid #E5E9EF", borderRadius: "10px", fontSize: "0.95rem", outline: "none", width: "260px", color: "#111827", background: "#fff" }} />
-            <a href="tel:+18033934907" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#2563EB", color: "#fff", padding: "12px 24px", borderRadius: "10px", fontWeight: 700, textDecoration: "none" }}>
-              <Phone size={16} /> Get Quote
-            </a>
-          </div>
-          <p style={{ fontSize: "0.8rem", color: "#9CA3AF", marginTop: "16px" }}>Or call us directly: <a href="tel:+18033934907" style={{ color: "#2563EB", fontWeight: 600 }}>(803) 393-4907</a></p>
+          <Reveal type="up">
+            <span className="eyebrow">Get Started</span>
+            <h2 style={{ marginBottom: "12px" }}>Ready to Keep Your Fleet Running?</h2>
+            <p style={{ marginBottom: "32px", maxWidth: "480px", margin: "0 auto 32px", color: "#6B7280" }}>
+              Get a free consultation for your fleet maintenance needs. Most roadside calls responded to within 60 minutes.
+            </p>
+            <div style={{ display: "flex", gap: "12px", justifyContent: "center", alignItems: "center", flexWrap: "wrap" }}>
+              <input type="email" placeholder="Enter your email" style={{ padding: "12px 18px", border: "1.5px solid #E5E9EF", borderRadius: "10px", fontSize: "0.95rem", outline: "none", width: "250px", color: "#111827", background: "#fff" }} />
+              <a href="tel:+18033934907" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#2563EB", color: "#fff", padding: "12px 24px", borderRadius: "10px", fontWeight: 700, textDecoration: "none" }}>
+                <Phone size={16} /> Get in Touch
+              </a>
+            </div>
+            <p style={{ fontSize: "0.8rem", color: "#9CA3AF", marginTop: "16px" }}>
+              Or call directly: <a href="tel:+18033934907" style={{ color: "#2563EB", fontWeight: 600 }}>(803) 393-4907</a>
+            </p>
+          </Reveal>
         </div>
       </section>
     </>
