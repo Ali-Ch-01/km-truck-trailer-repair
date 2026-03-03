@@ -1,7 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Phone, Menu, X, ChevronDown, Truck } from "lucide-react";
+import Image from "next/image";
+import { Phone, Menu, X, ChevronDown } from "lucide-react";
 
 const serviceLinks = [
   { label: "DPF Cleaning", href: "/dpf" },
@@ -58,14 +59,15 @@ export default function Navbar() {
       >
         <div className="container" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: "68px" }}>
           {/* Logo */}
-          <Link href="/" style={{ display: "flex", alignItems: "center", gap: "10px", textDecoration: "none" }}>
-            <div style={{ background: "#2563EB", borderRadius: "8px", padding: "6px 8px", display: "flex", alignItems: "center" }}>
-              <Truck size={20} color="#fff" />
-            </div>
-            <div>
-              <span style={{ fontWeight: 800, fontSize: "1.05rem", color: "#111827", lineHeight: 1 }}>KM Truck</span>
-              <span style={{ display: "block", fontSize: "0.7rem", color: "#6B7280", fontWeight: 500, lineHeight: 1, marginTop: "1px" }}>& Trailer Repair</span>
-            </div>
+          <Link href="/" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
+            <Image
+              src="/logo.png"
+              alt="KM Truck & Trailer Repair"
+              width={160}
+              height={52}
+              priority
+              style={{ objectFit: "contain", height: "48px", width: "auto" }}
+            />
           </Link>
 
           {/* Desktop Nav */}

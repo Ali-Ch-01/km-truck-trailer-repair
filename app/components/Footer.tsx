@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
-import { Phone, Mail, MapPin, Facebook, Instagram, Twitter, Youtube, Truck } from "lucide-react";
+import Image from "next/image";
+import { Phone, Mail, MapPin, Facebook, Instagram, Twitter, Youtube } from "lucide-react";
 
 const serviceLinks = [
   { label: "DPF Cleaning", href: "/dpf" },
@@ -36,15 +37,15 @@ export default function Footer() {
 
           {/* Brand Column */}
           <div>
-            <Link href="/" style={{ display: "inline-flex", alignItems: "center", gap: "10px", marginBottom: "16px", textDecoration: "none" }}>
-              <div style={{ background: "#2563EB", borderRadius: "8px", padding: "6px 8px" }}>
-                <Truck size={20} color="#fff" />
-              </div>
-              <div>
-                <span style={{ fontWeight: 800, fontSize: "1.05rem", color: "#111827" }}>KM Truck</span>
-                <span style={{ display: "block", fontSize: "0.7rem", color: "#6B7280", fontWeight: 500 }}>& Trailer Repair</span>
-              </div>
-            </Link>
+          <Link href="/" style={{ display: "inline-flex", alignItems: "center", marginBottom: "16px", textDecoration: "none" }}>
+            <Image
+              src="/logo.png"
+              alt="KM Truck & Trailer Repair"
+              width={160}
+              height={52}
+              style={{ objectFit: "contain", height: "52px", width: "auto" }}
+            />
+          </Link>
             <p style={{ fontSize: "0.9rem", color: "#6B7280", lineHeight: 1.7, marginBottom: "20px", maxWidth: "280px" }}>
               Since 2013, providing trusted truck and trailer repair services with a focus on reliability, speed, and customer care.
             </p>
