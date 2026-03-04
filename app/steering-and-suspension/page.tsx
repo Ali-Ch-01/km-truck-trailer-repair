@@ -16,6 +16,8 @@ export default function Page() {
       features={["Steering Gear Repair","Tie Rod Replacement","Air Bag Service","Shock Absorbers","Wheel Alignment","Kingpin Service","U-Joint Replacement","Road-Ready Inspection"]}
       faqItems={[{"question":"How do I know if my suspension needs repair?","answer":"Signs include uneven tire wear, drifting or pulling, bouncing, difficulty steering, or clunking sounds over bumps."},{"question":"Do you perform wheel alignments?","answer":"Yes, we perform precision wheel alignments on commercial trucks to improve handling and extend tire life."},{"question":"Can you repair air ride suspension?","answer":"Yes, we service and repair air ride suspension systems including air bags, valves, and height sensors."},{"question":"Is mobile suspension diagnosis available?","answer":"We can perform an initial inspection at your location, though most suspension repairs are best done in our shop."}]}
       relatedServices={[{"label":"Brakes","href":"/brakes"},{"label":"Tires","href":"/tires"},{"label":"Semi Truck Repair","href":"/semi-truck-repair"}]}
+      images={["/Steering%20&%20Suspension%201.jpg", "/steering-suspension-unsplash.jpg"]}
+      imageLayout="scattered"
     />
   );
 }

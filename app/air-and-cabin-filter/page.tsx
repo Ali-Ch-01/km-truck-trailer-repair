@@ -16,6 +16,8 @@ export default function Page() {
       features={["Engine Air Filter","Cabin Air Filter","DPF Filter","Fuel Filter","Hydraulic Filter","Oil Filter","Fast Service","Preventive Maintenance"]}
       faqItems={[{"question":"How often should I replace my truck's air filter?","answer":"Generally every 25,000–50,000 miles, but depends on operating conditions. Dusty environments require more frequent replacement."},{"question":"Does a clogged air filter hurt fuel economy?","answer":"Yes. A restricted air filter reduces airflow to the engine, causing it to work harder and consume more fuel."},{"question":"Do you offer full preventive maintenance packages?","answer":"Yes, we offer complete PM packages including oil change, all filters, fluid checks, and safety inspection."},{"question":"How long does filter replacement take?","answer":"Most filter replacements take 30–60 minutes and can often be done while you wait."}]}
       relatedServices={[{"label":"Semi Truck Repair","href":"/semi-truck-repair"},{"label":"DPF Cleaning","href":"/dpf"},{"label":"Engine Diagnostics","href":"/vehicle-engine-diagnostic"}]}
+      images={["/Cabin%20Filter%201.jpg", "/Cabin%20Filter%202.jpg"]}
+      imageLayout="scattered-alt"
     />
   );
 }

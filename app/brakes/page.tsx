@@ -16,6 +16,8 @@ export default function Page() {
       features={["Air Brake Inspection","Drum & Disc Brakes","ABS Diagnostics","DOT Compliance Check","Emergency Roadside Brake Fix","Brake Adjustment","Slack Adjuster Service","Wheel Seal Replacement"]}
       faqItems={[{"question":"Do you repair air brakes roadside?","answer":"Yes - our mobile repair units handle air brake leaks, brake adjustments, and emergency brake repairs right on the road."},{"question":"What brake brands do you service?","answer":"We service all major brake brands including Bendix, Haldex, Meritor, and more across all major truck OEMs."},{"question":"How do I know if my brakes need service?","answer":"Warning signs include pulling to one side, a hissing air leak, spongy pedal feel, grinding sounds, or ABS warning lights."},{"question":"Do you perform DOT brake inspections?","answer":"Absolutely. We perform full DOT-compliant brake system inspections and provide documentation for your records."}]}
       relatedServices={[{"label":"Tires","href":"/tires"},{"label":"Steering & Suspension","href":"/steering-and-suspension"},{"label":"Emergency Roadside","href":"/emergency-roadside-repair"}]}
+      images={["/brakes-img-1.jpg", "/brakes-img-2.jpg"]}
+      imageLayout="stacked"
     />
   );
 }

@@ -16,6 +16,8 @@ export default function Page() {
       features={["OEM Diagnostic Software","Fault Code Reading","Cummins/Detroit/Paccar","ECM Diagnostics","Sensor Testing","Turbo Diagnosis","Cooling System","Full Engine Repair"]}
       faqItems={[{"question":"What diagnostic software do you use?","answer":"We use Cummins Insite, Detroit Diagnostic Link (DDL), and other OEM-specific software for accurate diagnostics."},{"question":"Can you diagnose issues roadside?","answer":"Yes! Our mobile diagnostic units can read fault codes and perform preliminary diagnosis at your location."},{"question":"How long does a diagnostic take?","answer":"Basic diagnostic scanning takes 30–60 minutes. Complex intermittent issues may require additional test drive time."},{"question":"Do you clear codes after repair?","answer":"Yes, we clear all related fault codes and verify repair success through test procedures before returning your truck."}]}
       relatedServices={[{"label":"Semi Truck Repair","href":"/semi-truck-repair"},{"label":"Electrical Repair","href":"/electrical"},{"label":"DPF Cleaning","href":"/dpf"}]}
+      images={["/mechanic-diagnostic-1.jpg", "/mechanic-diagnostic-2.jpg"]}
+      imageLayout="grid"
     />
   );
 }

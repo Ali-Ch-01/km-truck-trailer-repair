@@ -16,6 +16,7 @@ export default function Page() {
       features={["Full Transmission Rebuild","Clutch Service","Fluid Flush & Refill","Electronic Diagnostics","Allison & Eaton Fuller","Minor Adjustments","Torque Converter","Mobile Inspection"]}
       faqItems={[{"question":"Do you rebuild transmissions?","answer":"Yes. We perform complete transmission rebuilds and overhauls for all major heavy-duty truck transmission brands."},{"question":"How do I know if my transmission needs repair?","answer":"Signs include slipping gears, hard shifts, delayed engagement, unusual noises, or transmission warning lights."},{"question":"How long does a transmission rebuild take?","answer":"A full transmission rebuild typically takes 3–5 business days. Simpler services like fluid changes take just a few hours."},{"question":"Do you service Allison automatic transmissions?","answer":"Yes, we specialize in Allison automatic and Eaton Fuller manual transmissions, among all other major brands."}]}
       relatedServices={[{"label":"Engine Diagnostics","href":"/vehicle-engine-diagnostic"},{"label":"Semi Truck Repair","href":"/semi-truck-repair"},{"label":"Electrical Repair","href":"/electrical"}]}
+      images={["/transmission-img-1.jpg", "/transmission-img-2.jpg"]}
     />
   );
 }

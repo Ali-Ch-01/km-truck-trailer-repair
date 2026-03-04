@@ -16,6 +16,7 @@ export default function Page() {
       features={["Flat Tire Repair","Tire Mounting & Balancing","Roadside Service","All Major Brands","Steer/Drive/Trailer Tires","Emergency Service","Budget-Friendly Pricing","Commercial Sizes"]}
       faqItems={[{"question":"Do you offer roadside tire repair?","answer":"Yes! Our mobile units respond 24/7 for roadside flat repair, tire changes, and emergency blowout service."},{"question":"What tire brands do you carry?","answer":"We stock and service major brands including Michelin, Bridgestone, Goodyear, Continental, and more."},{"question":"How long does a tire change take?","answer":"A roadside tire change typically takes 30–60 minutes depending on access and the type of repair needed."},{"question":"Do you service trailer tires too?","answer":"Yes, we service all trailer tire sizes. Visit our Trailer Tires page for more specific information."}]}
       relatedServices={[{"label":"Brakes","href":"/brakes"},{"label":"Trailer Tires","href":"/trailer-tires"},{"label":"Emergency Roadside","href":"/emergency-roadside-repair"}]}
+      images={["/tires-img-1.jpg", "/tires-img-2.jpg"]}
     />
   );
 }

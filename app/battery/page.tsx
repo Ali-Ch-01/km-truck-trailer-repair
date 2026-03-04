@@ -16,6 +16,8 @@ export default function Page() {
       features={["Battery Load Testing","Battery Replacement","Jump-Start Service","Alternator Inspection","Charging System Check","Voltage Testing","All Battery Brands","Mobile Service"]}
       faqItems={[{"question":"Can you jump-start my truck roadside?","answer":"Yes! We provide mobile jump-start service 24/7 across South Carolina for all commercial trucks and trailers."},{"question":"How do I know if my battery is failing?","answer":"Slow engine cranking, dim lights, warning lights, or a battery that needs frequent jump-starts are all signs of a failing battery."},{"question":"Do you test the alternator too?","answer":"Absolutely. We inspect the full charging system - battery, alternator, and voltage regulator - to find the root cause."},{"question":"What battery brands do you use?","answer":"We install premium commercial-grade batteries from top brands, sized for your specific truck application."}]}
       relatedServices={[{"label":"Electrical Repair","href":"/electrical"},{"label":"Emergency Roadside","href":"/emergency-roadside-repair"},{"label":"Engine Diagnostics","href":"/vehicle-engine-diagnostic"}]}
+      images={["/battery-img-1.jpg", "/battery-img-2.jpg"]}
+      imageLayout="scattered-alt"
     />
   );
 }
