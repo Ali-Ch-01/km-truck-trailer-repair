@@ -6,16 +6,27 @@ import Image from "next/image";
 import { Phone, ArrowRight, CheckCircle } from "lucide-react";
 
 export default function HeroSection() {
-  const imgRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const truckRef = useRef<HTMLDivElement>(null);
 
-  /* Subtle parallax on scroll */
+  /* Sticky scroll animation */
   useEffect(() => {
     const handleScroll = () => {
-      if (!imgRef.current) return;
-      const y = window.scrollY;
-      imgRef.current.style.transform = `scale(1.08) translateY(${y * 0.18}px)`;
+      if (!containerRef.current || !truckRef.current) return;
+      
+      const rect = containerRef.current.getBoundingClientRect();
+      const maxScroll = rect.height - window.innerHeight;
+      
+      let progress = -rect.top / maxScroll;
+      if (progress < 0) progress = 0;
+      if (progress > 1) progress = 1;
+      
+      
+      truckRef.current.style.transform = `translateX(${45 - (progress * 110)}%)`;
     };
+    
     window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll(); // Initial position setup
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -39,26 +50,27 @@ export default function HeroSection() {
   ];
 
   return (
-    <section style={{
-      position: "relative", width: "100%", minHeight: "100svh",
-      display: "flex", alignItems: "center", overflow: "hidden"
-    }}>
-      {/* ── Background image with Ken Burns + parallax ── */}
-      <div ref={imgRef} style={{
-        position: "absolute", inset: 0, zIndex: 0,
-        transition: "transform 0.1s linear",
-        animation: "kenBurns 22s ease-in-out infinite alternate",
+    <div ref={containerRef} style={{ width: "100%", height: "250vh", position: "relative" }}>
+      <section style={{
+        position: "sticky", top: 0, width: "100%", height: "100svh",
+        display: "flex", alignItems: "center", overflow: "hidden",
+        backgroundColor: "#050A19"
       }}>
-        <Image
-          src="/hero-truck-white.png"
-          alt="Professional semi truck on a highway"
-          fill
-          priority
-          quality={100}
-          sizes="100vw"
-          style={{ objectFit: "cover", objectPosition: "60% center" }}
-        />
-      </div>
+        {/* ── Scroll Animated Truck ── */}
+        <div ref={truckRef} style={{
+          position: "absolute", inset: 0, zIndex: 0,
+          willChange: "transform",
+        }}>
+          <Image
+            src="/bg-truck-mov.png"
+            alt="Moving Truck"
+            fill
+            priority
+            quality={100}
+            sizes="100vw"
+            style={{ objectFit: "cover", objectPosition: "center" }}
+          />
+        </div>
 
       {/* ── Floating particles ── */}
       <div style={{ position: "absolute", inset: 0, zIndex: 1, pointerEvents: "none", overflow: "hidden" }}>
@@ -200,6 +212,7 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
-    </section>
+      </section>
+    </div>
   );
 }
