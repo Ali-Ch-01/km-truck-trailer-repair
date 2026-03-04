@@ -15,9 +15,9 @@ export default function HeroSection() {
       if (!containerRef.current || !truckRef.current) return;
       
       const rect = containerRef.current.getBoundingClientRect();
-      const maxScroll = rect.height - window.innerHeight;
+      // Progress from 0 (top of screen) to 1 (scrolled completely out of view)
+      let progress = -rect.top / window.innerHeight;
       
-      let progress = -rect.top / maxScroll;
       if (progress < 0) progress = 0;
       if (progress > 1) progress = 1;
       
@@ -53,13 +53,12 @@ export default function HeroSection() {
   ];
 
   return (
-    <div ref={containerRef} style={{ width: "100%", height: "250vh", position: "relative" }}>
+    <div ref={containerRef} style={{ width: "100%", position: "relative", backgroundColor: "#050A19" }}>
       <section style={{
-        position: "sticky", top: 0, width: "100%", height: "100svh",
-        display: "flex", alignItems: "center", overflow: "hidden",
-        backgroundColor: "#050A19"
+        position: "relative", width: "100%", height: "100svh", minHeight: "500px",
+        display: "flex", alignItems: "center", overflow: "hidden"
       }}>
-        {/* ── Scroll Animated Truck ── */}
+        {/* ── Parallax Animated Truck ── */}
         <div ref={truckRef} style={{
           position: "absolute", inset: 0, zIndex: 0,
           willChange: "transform",
@@ -138,8 +137,8 @@ export default function HeroSection() {
       }} />
 
       {/* ── Hero content (staggered animations) ── */}
-      <div className="container" style={{ position: "relative", zIndex: 3, padding: "0 24px clamp(40px, 6vh, 60px)" }}>
-        <div style={{ maxWidth: "610px" }}>
+      <div className="container" style={{ position: "relative", zIndex: 3, padding: "0 24px" }}>
+        <div style={{ maxWidth: "610px", paddingBottom: "20px" }}>
 
           {/* Badge */}
           <div className="anim-fade-up delay-1 live-dot" style={{

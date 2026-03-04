@@ -58,7 +58,7 @@ export default function HomePage() {
       <HeroSection />
 
       {/* ── Stats Bar ── */}
-      <section style={{ background: "#fff", paddingTop: "40px", paddingBottom: "0" }}>
+      <section style={{ background: "#fff", padding: "0" }}>
         <div className="container">
           <Reveal type="up">
             <div style={{
@@ -97,7 +97,7 @@ export default function HomePage() {
       <StackedServices services={services} />
 
       {/* ── What Makes K&M Different ── */}
-      <section className="section" style={{ background: "#F8F9FB", borderTop: "1px solid #E5E9EF", borderBottom: "1px solid #E5E9EF" }}>
+      <section className="section our-promise-section" style={{ background: "#F8F9FB", borderTop: "1px solid #E5E9EF", borderBottom: "1px solid #E5E9EF" }}>
         <div className="container">
           <Reveal type="up">
             <div className="section-header section-header--center">
