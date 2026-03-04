@@ -16,24 +16,37 @@ export default function Reveal({ children, className = "", style = {}, delay = 0
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    
+    // Set initial state
+    el.style.opacity = "0";
+    el.style.transition = `all 0.6s cubic-bezier(0.25, 1, 0.5, 1) ${delay}ms`;
+    
+    if (type === "up") el.style.transform = "translateY(40px)";
+    else if (type === "left") el.style.transform = "translateX(-40px)";
+    else if (type === "right") el.style.transform = "translateX(50px)";
+    else if (type === "scale") el.style.transform = "scale(0.9)";
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          el.style.transitionDelay = `${delay}ms`;
-          el.classList.add("is-visible");
+          el.style.opacity = "1";
+          if (type === "up" || type === "left" || type === "right") {
+            el.style.transform = "translate(0, 0)";
+          } else if (type === "scale") {
+            el.style.transform = "scale(1)";
+          }
           observer.unobserve(el);
         }
       },
-      { threshold: 0.12 }
+      { threshold: 0.1 }
     );
+    
     observer.observe(el);
     return () => observer.disconnect();
-  }, [delay]);
-
-  const revealClass = type === "left" ? "reveal-left" : type === "right" ? "reveal-right" : type === "scale" ? "reveal-scale" : "reveal";
+  }, [delay, type]);
 
   return (
-    <div ref={ref} className={`${revealClass} ${className}`} style={style}>
+    <div ref={ref} className={className} style={{ ...style, willChange: "transform, opacity" }}>
       {children}
     </div>
   );

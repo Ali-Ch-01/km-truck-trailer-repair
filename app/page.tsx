@@ -3,6 +3,7 @@ import { ArrowRight, Wrench, Settings, Truck, Zap, Battery, Wind, Thermometer, A
 import type { Metadata } from "next";
 import HeroSection from "@/app/components/ui/HeroSection";
 import Reveal from "@/app/components/ui/Reveal";
+import StackedServices from "@/app/components/ui/StackedServices";
 
 export const metadata: Metadata = {
   title: "Truck & Trailer Repair in South Carolina | 24/7 Emergency Service",
@@ -92,43 +93,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Services Grid ── */}
-      <section className="section">
-        <div className="container">
-          <Reveal type="up">
-            <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: "40px", flexWrap: "wrap", gap: "16px" }}>
-              <div>
-                <span className="eyebrow">Our Expertise</span>
-                <h2 style={{ margin: 0 }}>Comprehensive Repair Solutions</h2>
-              </div>
-              <Link href="/services" style={{ display: "inline-flex", alignItems: "center", gap: "6px", color: "#2563EB", fontWeight: 600, textDecoration: "none", fontSize: "0.9rem" }}>
-                View all services <ArrowRight size={16} />
-              </Link>
-            </div>
-          </Reveal>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: "18px" }}>
-            {services.map((s, i) => (
-              <Reveal key={s.href} type="up" delay={i * 60}>
-                <Link href={s.href} className="tilt-card" style={{
-                  background: "#fff", border: "1px solid #E5E9EF", borderRadius: "14px",
-                  padding: "22px", display: "block", textDecoration: "none",
-                  transition: "all 0.25s ease",
-                }}>
-                  <div style={{
-                    width: "46px", height: "46px", background: "#EFF6FF", borderRadius: "10px",
-                    display: "flex", alignItems: "center", justifyContent: "center",
-                    color: "#2563EB", marginBottom: "12px",
-                    transition: "transform 0.3s ease",
-                  }}>{s.icon}</div>
-                  <h4 style={{ marginBottom: "6px", fontSize: "0.95rem" }}>{s.title}</h4>
-                  <p style={{ fontSize: "0.84rem", margin: "0 0 12px", lineHeight: 1.6 }}>{s.desc}</p>
-                  <span style={{ fontSize: "0.78rem", color: "#2563EB", fontWeight: 600 }}>Learn more →</span>
-                </Link>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* ── Vertical Stacking Services ── */}
+      <StackedServices services={services} />
 
       {/* ── What Makes K&M Different ── */}
       <section className="section" style={{ background: "#F8F9FB", borderTop: "1px solid #E5E9EF", borderBottom: "1px solid #E5E9EF" }}>
