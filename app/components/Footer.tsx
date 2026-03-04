@@ -146,14 +146,16 @@ export default function Footer() {
       </div>
 
       <style>{`
-        @media (max-width: 900px) {
-          footer > div:first-child > div:first-child > div:first-child {
+        @media (max-width: 992px) {
+          footer .container > div:first-child {
             grid-template-columns: 1fr 1fr !important;
+            gap: 32px !important;
           }
         }
-        @media (max-width: 540px) {
-          footer > div:first-child > div:first-child > div:first-child {
+        @media (max-width: 600px) {
+          footer .container > div:first-child {
             grid-template-columns: 1fr !important;
+            gap: 40px !important;
           }
         }
       `}</style>

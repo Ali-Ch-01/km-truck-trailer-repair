@@ -44,6 +44,7 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 body {
@@ -56,6 +57,8 @@ body {
   color: var(--gray-900);
   line-height: 1.6;
   font-size: 16px;
+  overflow-x: hidden;
+  position: relative;
 }
 
 /* ── Typography ── */
@@ -1228,5 +1231,75 @@ img {
   }
   section > .container > .stats-bar > div:nth-child(odd) {
     border-right: 1px solid rgba(255, 255, 255, 0.15) !important;
+  }
+}
+
+/* ── Stats Grid Responsive ── */
+.stats-grid-responsive {
+  grid-template-columns: repeat(4, 1fr);
+}
+@media (max-width: 992px) {
+  .stats-grid-responsive {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .stats-grid-responsive {
+    grid-template-columns: 1fr;
+  }
+  .stats-grid-responsive > div {
+    border-right: none !important;
+    border-bottom: 1px solid #e5e9ef;
+  }
+  .stats-grid-responsive > div:last-child {
+    border-bottom: none;
+  }
+}
+
+/* ── Stacked Services Responsive ── */
+@media (max-width: 992px) {
+  .sticky-wrapper {
+    align-items: flex-start !important;
+    padding-top: 100px !important;
+  }
+  .stacked-grid {
+    flex-direction: column-reverse;
+    gap: 10px !important;
+    justify-content: flex-start;
+    text-align: center;
+  }
+  .stacked-left,
+  .stacked-right {
+    flex: none !important;
+    width: 100%;
+    padding-left: 0 !important;
+  }
+  .stacked-left {
+    height: 480px !important;
+  }
+  .stacked-right {
+    position: relative;
+    z-index: 50;
+    transform: translate3d(0, 0, 1px);
+    background: linear-gradient(to bottom, #F8F9FB 85%, rgba(248,249,251,0));
+    padding-bottom: 20px;
+  }
+  .stacked-right .eyebrow,
+  .stacked-right h2,
+  .stacked-right p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .stacked-right .stats-row {
+    justify-content: center;
+    margin-bottom: 24px !important;
+  }
+}
+@media (max-width: 600px) {
+  .sticky-wrapper {
+    padding-top: 60px !important;
+  }
+  .stacked-left {
+    height: 400px !important;
   }
 }

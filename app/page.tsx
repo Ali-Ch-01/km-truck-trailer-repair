@@ -62,10 +62,10 @@ export default function HomePage() {
         <div className="container">
           <Reveal type="up">
             <div style={{
-              display: "grid", gridTemplateColumns: "repeat(4, 1fr)",
+              display: "grid",
               gap: 0, background: "#F8F9FB", border: "1px solid #E5E9EF",
               borderRadius: "16px", overflow: "hidden",
-            }} className="stats-bar">
+            }} className="stats-bar stats-grid-responsive">
               {stats.map((s, i) => (
                 <Reveal key={i} type="scale" delay={i * 100}>
                   <div style={{

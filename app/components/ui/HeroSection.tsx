@@ -21,8 +21,11 @@ export default function HeroSection() {
       if (progress < 0) progress = 0;
       if (progress > 1) progress = 1;
       
+      const isMobile = window.innerWidth <= 768;
+      const startX = isMobile ? 0 : 45; // Start it exactly on the left edge on mobile
+      const moveMult = isMobile ? 65 : 110; // Pan slower on mobile to prevent running out of image
       
-      truckRef.current.style.transform = `translateX(${45 - (progress * 110)}%)`;
+      truckRef.current.style.transform = `translateX(${startX - (progress * moveMult)}%)`;
     };
     
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -61,14 +64,27 @@ export default function HeroSection() {
           position: "absolute", inset: 0, zIndex: 0,
           willChange: "transform",
         }}>
+          <style jsx>{`
+            .responsive-truck {
+              object-fit: cover;
+              object-position: center;
+            }
+            @media (max-width: 768px) {
+              .responsive-truck {
+                /* Lock the image's left edge (truck front) to the viewport's left edge */
+                object-position: left center !important;
+              }
+            }
+          `}</style>
           <Image
             src="/bg-truck-mov.png"
             alt="Moving Truck"
+            className="responsive-truck"
             fill
             priority
             quality={100}
             sizes="100vw"
-            style={{ objectFit: "cover", objectPosition: "center" }}
+            style={{ objectFit: "cover" }}
           />
         </div>
 
