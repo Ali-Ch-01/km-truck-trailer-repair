@@ -189,7 +189,7 @@ export default function ServicePageTemplate({
       <section style={{ background: "#111827", padding: "64px 0" }}>
         <div className="container" style={{ textAlign: "center" }}>
           <h2 style={{ color: "#fff", marginBottom: "12px" }}>Ready to Get Back on the Road?</h2>
-          <p style={{ color: "#9CA3AF", marginBottom: "28px", maxWidth: "480px", margin: "0 auto 28px" }}>Call us now or request service online. We respond fast — most roadside calls within 60 minutes.</p>
+          <p style={{ color: "#9CA3AF", marginBottom: "28px", maxWidth: "480px", margin: "0 auto 28px" }}>Call us now or request service online. We respond fast - most roadside calls within 60 minutes.</p>
           <div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap" }}>
             <a href="tel:+18033934907" style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#2563EB", color: "#fff", padding: "13px 28px", borderRadius: "10px", fontWeight: 700, textDecoration: "none", fontSize: "1rem" }}>
               <Phone size={18} /> Call Now: (803) 393-4907

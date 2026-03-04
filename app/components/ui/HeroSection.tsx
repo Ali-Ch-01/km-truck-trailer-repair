@@ -127,7 +127,7 @@ export default function HeroSection() {
               boxShadow: "0 0 8px #4ADE80",
               animation: "pulse-glow 2s ease-in-out infinite"
             }} />
-            Available 24 / 7 &mdash; South Carolina
+            Available 24 / 7 | South Carolina
           </div>
 
           {/* Headline */}
@@ -151,7 +151,7 @@ export default function HeroSection() {
             Professional roadside assistance and comprehensive fleet maintenance across South Carolina. We minimize downtime so you can maximize delivery.
           </p>
 
-          {/* CTAs — 3D tilt on hover */}
+          {/* CTAs - 3D tilt on hover */}
           <div className="anim-fade-up delay-4" style={{ display: "flex", gap: "14px", flexWrap: "wrap", marginBottom: "40px" }}>
             <div
               onMouseMove={handleTilt}

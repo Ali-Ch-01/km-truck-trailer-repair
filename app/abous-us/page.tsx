@@ -53,10 +53,10 @@ const pillars = [
 ];
 
 const reviews = [
-  { name: "Leonel Truckin",      time: "6 months ago", text: "They are so amazing people well spoken, on time and quick like ambulance, fair price. I'm encouraging everyone — if you break down call them. They really care about customers. Took 37 minutes to fix my brake leaks on my semi truck." },
-  { name: "Curtis Johnson",      time: "6 months ago", text: "Breakdown on I77 S or North — call these guys. Fast and professional, affordable, got me back on the road. Thank you!" },
+  { name: "Leonel Truckin",      time: "6 months ago", text: "They are so amazing people well spoken, on time and quick like ambulance, fair price. I'm encouraging everyone - if you break down call them. They really care about customers. Took 37 minutes to fix my brake leaks on my semi truck." },
+  { name: "Curtis Johnson",      time: "6 months ago", text: "Breakdown on I77 S or North - call these guys. Fast and professional, affordable, got me back on the road. Thank you!" },
   { name: "Serigne Babou",       time: "7 months ago", text: "They fixed my truck & trailer all the time. The best shop around Columbia SC & Charlotte area. Thanks a lot guys." },
-  { name: "Aubrey Brazelton",    time: "7 months ago", text: "Lost for words but to sum it all up — quick fix. Thank you! Excellent service from start to finish." },
+  { name: "Aubrey Brazelton",    time: "7 months ago", text: "Lost for words but to sum it all up - quick fix. Thank you! Excellent service from start to finish." },
   { name: "Markingley Constant", time: "7 months ago", text: "I've been in trucking for 9 years. I've never been to any shop like this. They're honest, fast and the price is very reasonable. I would recommend everyone to K&M." },
   { name: "Laughters Legion TV", time: "7 months ago", text: "Great service, great customer service, they even went beyond and gave me extra service for my coolant sensor. Thank you K&M team." },
   { name: "Daman Grewal",        time: "7 months ago", text: "This is the best diesel repair shop in South Carolina on I77 and I26 area. They are very truthful and very honest people. Highly recommended." },
@@ -334,7 +334,7 @@ export default function AboutPage() {
               Every mile matters, and we make sure you don&apos;t miss one.
             </h2>
             <p style={{ color: "#94A3B8", lineHeight: 1.85, marginBottom: "28px", fontSize: "0.975rem" }}>
-              At K&amp;M Truck &amp; Trailer Repair, it&apos;s not just about fixing trucks — it&apos;s about keeping your journey moving. We know that trust is earned on the road, which is why we treat every truck like our responsibility.
+              At K&amp;M Truck &amp; Trailer Repair, it&apos;s not just about fixing trucks - it&apos;s about keeping your journey moving. We know that trust is earned on the road, which is why we treat every truck like our responsibility.
             </p>
             <div style={{ display: "flex", gap: "20px", flexWrap: "wrap" }}>
               {[{ label: "About Us", href: "/abous-us" }, { label: "Contact Us", href: "/contact-us" }, { label: "Services", href: "/services" }].map((l) => (
@@ -452,7 +452,7 @@ export default function AboutPage() {
             <div style={{ maxWidth: "500px" }}>
               <span style={{ display: "inline-block", fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "#93C5FD", marginBottom: "12px", background: "rgba(37,99,235,0.2)", border: "1px solid rgba(37,99,235,0.35)", padding: "4px 12px", borderRadius: "9999px" }}>Mobile Service</span>
               <h2 style={{ color: "#fff", marginBottom: "12px", fontSize: "clamp(1.5rem,3vw,2.2rem)" }}>
-                We Come to You — Anywhere in South Carolina
+                We Come to You - Anywhere in South Carolina
               </h2>
               <p style={{ color: "#CBD5E1", lineHeight: 1.75, margin: 0, fontSize: "0.95rem" }}>
                 Broken down on I-26 or I-77? Our mobile technicians dispatch fast to get you back on the road.
@@ -469,7 +469,7 @@ export default function AboutPage() {
           <Reveal dir="up">
             <h2 style={{ color: "#fff", marginBottom: "12px" }}>Need Help? In an Urgent Situation?</h2>
             <p style={{ color: "rgba(255,255,255,0.85)", marginBottom: "28px", fontSize: "1rem" }}>
-              Please call us immediately — we&apos;re available 24/7 across South Carolina.
+              Please call us immediately - we&apos;re available 24/7 across South Carolina.
             </p>
             <a href="tel:+18033934907" style={{ display: "inline-flex", alignItems: "center", gap: "10px", background: "#fff", color: "#2563EB", padding: "16px 38px", borderRadius: "12px", fontWeight: 800, fontSize: "1.2rem", textDecoration: "none", boxShadow: "0 6px 30px rgba(0,0,0,0.2)" }}>
               <Phone size={22} /> 803-393-4907

@@ -11,7 +11,7 @@ export default function Page() {
     <CityPageTemplate
       city="Columbia"
       state="SC"
-      description="If you're stranded in Columbia, SC, K&M Truck & Trailer is your fastest call. We dispatch fully-equipped mobile units to your location along I-77, I-26, and I-20 — day or night, rain or shine."
+      description="If you're stranded in Columbia, SC, K&M Truck & Trailer is your fastest call. We dispatch fully-equipped mobile units to your location along I-77, I-26, and I-20 - day or night, rain or shine."
       highways={["I-77","I-26","I-20"]}
     />
   );

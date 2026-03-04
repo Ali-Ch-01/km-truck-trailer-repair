@@ -111,7 +111,7 @@ export default function ContactPage() {
                   { icon: <MapPin size={18} color="#2563EB" />, label: "Location", value: "1278 State Rd S-20-233\nRidgeway, SC 29130" },
                   { icon: <Phone size={18} color="#2563EB" />, label: "Call Us", value: "(803) 393-4907", href: "tel:+18033934907" },
                   { icon: <Mail size={18} color="#2563EB" />, label: "Email Us", value: "repair@kmtrucktrailer.com", href: "mailto:repair@kmtrucktrailer.com" },
-                  { icon: <Clock size={18} color="#2563EB" />, label: "Hours", value: "24/7 — Always Available" },
+                  { icon: <Clock size={18} color="#2563EB" />, label: "Hours", value: "24/7 - Always Available" },
                 ].map((item, i) => (
                   <div key={i} style={{ display: "flex", gap: "12px", alignItems: "flex-start", marginBottom: "18px", paddingBottom: "18px", borderBottom: i < 3 ? "1px solid #E5E9EF" : "none" }}>
                     <div style={{ marginTop: "2px", flexShrink: 0 }}>{item.icon}</div>

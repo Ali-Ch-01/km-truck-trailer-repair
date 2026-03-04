@@ -3,14 +3,14 @@ import ServicePageTemplate from "../components/ui/ServicePageTemplate";
 
 export const metadata: Metadata = {
   title: "Tire, Brake & Suspension Services in South Carolina | KM Truck & Trailer",
-  description: "Complete tire, brake, and suspension service package — DOT compliant, roadside or in-shop, for all truck types.",
+  description: "Complete tire, brake, and suspension service package - DOT compliant, roadside or in-shop, for all truck types.",
 };
 
 export default function Page() {
   return (
     <ServicePageTemplate
       title="Tire, Brake & Suspension Services in South Carolina"
-      heroSubtitle="Complete tire, brake, and suspension service package — DOT compliant, roadside or in-shop, for all truck types."
+      heroSubtitle="Complete tire, brake, and suspension service package - DOT compliant, roadside or in-shop, for all truck types."
       bodyIntro="Your truck's tire, brake, and suspension systems work together to keep you safe and on the road. Our comprehensive service package addresses all three systems, ensuring maximum safety and compliance."
       bodyContent="We perform full DOT inspections covering these critical systems and provide detailed reports for your records. Our preventive approach helps you catch issues before they become costly breakdowns."
       features={["Full Tire Package","Brake System Overhaul","Suspension Inspection","DOT Inspection","Wheel Alignment","Air Ride Service","Roadside Available","Fleet Packages"]}

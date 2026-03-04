@@ -3,14 +3,14 @@ import ServicePageTemplate from "../components/ui/ServicePageTemplate";
 
 export const metadata: Metadata = {
   title: "Steering & Suspension Repair for Trucks in South Carolina | KM Truck & Trailer",
-  description: "Full steering and suspension service — steering gear, tie rods, air bags, shocks, and wheel alignment. Mobile service available.",
+  description: "Full steering and suspension service - steering gear, tie rods, air bags, shocks, and wheel alignment. Mobile service available.",
 };
 
 export default function Page() {
   return (
     <ServicePageTemplate
       title="Steering & Suspension Repair for Trucks in South Carolina"
-      heroSubtitle="Full steering and suspension service — steering gear, tie rods, air bags, shocks, and wheel alignment. Mobile service available."
+      heroSubtitle="Full steering and suspension service - steering gear, tie rods, air bags, shocks, and wheel alignment. Mobile service available."
       bodyIntro="Proper steering and suspension are critical for safe truck operation. Our technicians inspect and repair all components of your truck's steering and suspension systems to ensure confident handling and a smooth ride."
       bodyContent="We service air ride suspension, leaf spring systems, steering gears, tie rods, and perform wheel alignments to extend tire life and improve handling. Road-ready inspection included."
       features={["Steering Gear Repair","Tie Rod Replacement","Air Bag Service","Shock Absorbers","Wheel Alignment","Kingpin Service","U-Joint Replacement","Road-Ready Inspection"]}

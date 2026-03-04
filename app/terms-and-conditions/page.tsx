@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Terms & Conditions | KM Truck & Trailer",
-  description: "Terms and Conditions for KM Truck & Trailer — the rules and guidelines governing use of our services and website.",
+  description: "Terms and Conditions for KM Truck & Trailer - the rules and guidelines governing use of our services and website.",
 };
 
 export default function TermsPage() {

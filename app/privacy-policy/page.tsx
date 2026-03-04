@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | KM Truck & Trailer",
-  description: "Privacy Policy for KM Truck & Trailer — how we collect, use, and protect your personal information.",
+  description: "Privacy Policy for KM Truck & Trailer - how we collect, use, and protect your personal information.",
 };
 
 export default function PrivacyPolicyPage() {

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 const services = [
   { icon: <Wrench size={24} />, title: "Engine Diagnostics & Repair", desc: "Advanced diagnostics for Cummins, Detroit & Paccar engines. Fast, accurate fault resolution.", href: "/vehicle-engine-diagnostic" },
   { icon: <Settings size={24} />, title: "Transmission Repair", desc: "From minor adjustments to complete overhauls on all automatic and manual transmissions.", href: "/transmission" },
-  { icon: <Shield size={24} />, title: "Brake Service & Repair", desc: "Full air brake inspections, drum & disc repair, ABS diagnostics — DOT compliant.", href: "/brakes" },
+  { icon: <Shield size={24} />, title: "Brake Service & Repair", desc: "Full air brake inspections, drum & disc repair, ABS diagnostics - DOT compliant.", href: "/brakes" },
   { icon: <Truck size={24} />, title: "Tire Repair & Change", desc: "Roadside flat repair, mounting, balancing for all commercial tire sizes and brands.", href: "/tires" },
   { icon: <Zap size={24} />, title: "Electrical System Repairs", desc: "Wiring, ECM/ECU diagnostics, lighting, charging system, and sensor replacement.", href: "/electrical" },
   { icon: <Battery size={24} />, title: "Battery Replacement", desc: "Load testing, battery replacement, alternator checks, and jump-start service.", href: "/battery" },
@@ -21,7 +21,7 @@ const services = [
   { icon: <Thermometer size={24} />, title: "AC & Heating Repair", desc: "Compressor repair, AC recharge, heater core, and blower motor service.", href: "/air-conditioning" },
   { icon: <Wind size={24} />, title: "DPF Cleaning & Force Regen", desc: "Certified DPF cleaning and forced regeneration to keep you emissions-compliant.", href: "/dpf" },
   { icon: <Truck size={24} />, title: "Trailer Repair", desc: "Structural repairs, liftgate, door, lighting, and full trailer electrical overhauls.", href: "/trailer-repair" },
-  { icon: <AlertTriangle size={24} />, title: "24/7 Emergency Roadside", desc: "Mobile roadside assistance anywhere in SC — tires, fuel, jump-starts, and more.", href: "/emergency-roadside-repair" },
+  { icon: <AlertTriangle size={24} />, title: "24/7 Emergency Roadside", desc: "Mobile roadside assistance anywhere in SC - tires, fuel, jump-starts, and more.", href: "/emergency-roadside-repair" },
 ];
 
 const stats = [
@@ -34,13 +34,13 @@ const stats = [
 const trustPillars = [
   { icon: <Shield size={28} />, title: "Trusted & Professional", desc: "Experienced technicians delivering reliable repairs you can count on, every single time.", color: "#2563EB", bg: "#EFF6FF" },
   { icon: <CreditCard size={28} />, title: "Flexible Payment", desc: "Convenient payment choices designed to fit your budget and keep your fleet moving.", color: "#059669", bg: "#ECFDF5" },
-  { icon: <Star size={28} />, title: "Satisfaction Guarantee", desc: "Quality service backed by our commitment to customer satisfaction — we make it right.", color: "#D97706", bg: "#FFFBEB" },
+  { icon: <Star size={28} />, title: "Satisfaction Guarantee", desc: "Quality service backed by our commitment to customer satisfaction - we make it right.", color: "#D97706", bg: "#FFFBEB" },
   { icon: <HeartHandshake size={28} />, title: "Friendly Support", desc: "A helpful team ready to assist you every step of the way, from diagnosis to delivery.", color: "#7C3AED", bg: "#F5F3FF" },
 ];
 
 const testimonials = [
   { name: "Leonel Truckin", text: "They are so amazing people, well spoken, on time and quick. They took 37 minutes to fix my brake leaks on my semi truck. Wonderful service!", stars: 5 },
-  { name: "Markingley Constant", text: "9 years in trucking — I've never been to any shop like this. Honest, fast, very reasonable price. Highly recommend K&M to everyone in South Carolina.", stars: 5 },
+  { name: "Markingley Constant", text: "9 years in trucking - I've never been to any shop like this. Honest, fast, very reasonable price. Highly recommend K&M to everyone in South Carolina.", stars: 5 },
   { name: "Daman Grewal", text: "Best diesel repair shop in South Carolina on I-77 and I-26 area. Very truthful and honest people. Highly recommend to anybody.", stars: 5 },
 ];
 
@@ -137,7 +137,7 @@ export default function HomePage() {
             <div className="section-header section-header--center">
               <span className="eyebrow">Our Promise</span>
               <h2>What Makes K&amp;M Different</h2>
-              <p style={{ maxWidth: "520px" }}>We don&apos;t just fix trucks — we build trust on every repair, every mile, every time.</p>
+              <p style={{ maxWidth: "520px" }}>We don&apos;t just fix trucks - we build trust on every repair, every mile, every time.</p>
             </div>
           </Reveal>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "20px" }}>
